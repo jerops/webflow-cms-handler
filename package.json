@@ -1,0 +1,19 @@
+{
+  "name": "webflow-cms-handler",
+  "version": "1.0.0",
+  "description": "Serverless handler for Webflow CMS integration",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel --prod"
+  },
+  "keywords": ["webflow", "cms", "serverless"],
+  "author": "Jerops",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "vercel": "^33.0.0"
+  }
+}
