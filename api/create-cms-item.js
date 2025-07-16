@@ -23,21 +23,18 @@ export default async function handler(req, res) {
     // Get form data from request body
     const formData = req.body;
     
-    // Validate required fields (customize based on your form)
-    if (!formData.name || !formData.email) {
+    // Validate required fields - only check for name now
+    if (!formData.name) {
       return res.status(400).json({ 
-        error: 'Missing required fields: name and email' 
+        error: 'Missing required field: name' 
       });
     }
 
-    // Prepare the CMS item data
+    // Prepare the CMS item data - only name and slug
     const itemData = {
       fieldData: {
         name: formData.name,
-        slug: formData.name.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
-        email: formData.email,
-        message: formData.message || '',
-        phone: formData.phone || '',
+        slug: formData.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')
       },
       isDraft: false
     };
